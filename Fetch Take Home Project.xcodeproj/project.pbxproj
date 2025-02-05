@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2379FB062D50070A003BF215 /* FullScreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2379FB052D5006E4003BF215 /* FullScreenImageView.swift */; };
+		2379FB372D51CE8B003BF215 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2379FB362D51CE8A003BF215 /* CachedAsyncImage.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		2379FACF2D4C0237003BF215 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +32,8 @@
 		2379FABE2D4C0236003BF215 /* Fetch Take Home Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch Take Home Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2379FACE2D4C0237003BF215 /* Fetch Take Home ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetch Take Home ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2379FAD82D4C0237003BF215 /* Fetch Take Home ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetch Take Home ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2379FB052D5006E4003BF215 /* FullScreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageView.swift; sourceTree = "<group>"; };
+		2379FB362D51CE8A003BF215 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,6 +50,21 @@
 		2379FADB2D4C0237003BF215 /* Fetch Take Home ProjectUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Fetch Take Home ProjectUITests";
+			sourceTree = "<group>";
+		};
+		2379FAF92D4FFE1B003BF215 /* ViewModels */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2379FAFC2D4FFE21003BF215 /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2379FAFF2D4FFE2A003BF215 /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,10 +97,14 @@
 		2379FAB52D4C0236003BF215 = {
 			isa = PBXGroup;
 			children = (
-				2379FAC02D4C0236003BF215 /* Fetch Take Home Project */,
+				2379FB042D5006D9003BF215 /* Views */,
+				2379FAFF2D4FFE2A003BF215 /* Models */,
+				2379FAF92D4FFE1B003BF215 /* ViewModels */,
+				2379FAFC2D4FFE21003BF215 /* Services */,
 				2379FAD12D4C0237003BF215 /* Fetch Take Home ProjectTests */,
 				2379FADB2D4C0237003BF215 /* Fetch Take Home ProjectUITests */,
 				2379FABF2D4C0236003BF215 /* Products */,
+				2379FAC02D4C0236003BF215 /* Fetch Take Home Project */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +116,15 @@
 				2379FAD82D4C0237003BF215 /* Fetch Take Home ProjectUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2379FB042D5006D9003BF215 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2379FB362D51CE8A003BF215 /* CachedAsyncImage.swift */,
+				2379FB052D5006E4003BF215 /* FullScreenImageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +144,9 @@
 			);
 			fileSystemSynchronizedGroups = (
 				2379FAC02D4C0236003BF215 /* Fetch Take Home Project */,
+				2379FAF92D4FFE1B003BF215 /* ViewModels */,
+				2379FAFC2D4FFE21003BF215 /* Services */,
+				2379FAFF2D4FFE2A003BF215 /* Models */,
 			);
 			name = "Fetch Take Home Project";
 			packageProductDependencies = (
@@ -236,6 +274,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2379FB062D50070A003BF215 /* FullScreenImageView.swift in Sources */,
+				2379FB372D51CE8B003BF215 /* CachedAsyncImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,13 +5,49 @@
 //  Created by Carson Godwin on 1/30/25.
 //
 
-import Testing
+import XCTest
+
 @testable import Fetch_Take_Home_Project
 
-struct Fetch_Take_Home_ProjectTests {
+@MainActor
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+class RecipeViewModelTests: XCTestCase {
+    
+    var viewModel: RecipeViewModel!
+    
+    override func setUp() {
+        super.setUp()
+        viewModel = RecipeViewModel()
     }
-
+    
+    override func tearDown() {
+        viewModel = nil
+        super.tearDown()
+    }
+    
+    func testFetchRecipesUpdatesList() async {
+        let mockRecipes = [
+            Recipe(id: "1", name: "Pizza", cuisine: "Italian", photoURLSmall: nil, photoURLLarge: nil, sourceURL: nil, youtubeURL: nil),
+            Recipe(id: "2", name: "Sushi", cuisine: "Japanese", photoURLSmall: nil, photoURLLarge: nil, sourceURL: nil, youtubeURL: nil)
+        ]
+        
+        viewModel.recipes = mockRecipes
+        viewModel.applySorting()
+        
+        XCTAssertEqual(viewModel.sortedRecipes.count, 2)
+        XCTAssertEqual(viewModel.sortedRecipes.first?.name, "Pizza")
+    }
+    
+    func testSortingByCuisine() {
+        let mockRecipes = [
+            Recipe(id: "1", name: "Sushi", cuisine: "Japanese", photoURLSmall: nil, photoURLLarge: nil, sourceURL: nil, youtubeURL: nil),
+            Recipe(id: "2", name: "Pizza", cuisine: "Italian", photoURLSmall: nil, photoURLLarge: nil, sourceURL: nil, youtubeURL: nil)
+        ]
+        
+        viewModel.recipes = mockRecipes
+        viewModel.selectedSortOption = .cuisine
+        
+        XCTAssertEqual(viewModel.sortedRecipes.first?.cuisine, "Italian")
+    }
 }
+
